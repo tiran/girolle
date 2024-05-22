@@ -61,7 +61,7 @@ def girolle(wheel_fname: str) -> str:
     os_tag = get_os_tag()
     machine = platform.machine()
     logger.info("os tag: %s, machine: %s", os_tag, machine)
-    target_platform = f"{os_tag}_{machine}"
+    target_platform = f"{os_tag}-{machine}"
 
     _, _, _, in_tags = parse_wheel_filename(wheel_fname)
     in_platforms: list[str] = list(set(t.platform for t in in_tags))

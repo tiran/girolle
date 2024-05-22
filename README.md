@@ -11,16 +11,16 @@ DEBUG:girolle.girolle:RPM requires: ld-linux-x86-64.so.2()(64bit), ld-linux-x86-
 DEBUG:girolle.girolle:Skipped: libc10.so()(64bit), libc10_cuda.so()(64bit), libshm.so()(64bit), libtorch.so()(64bit), libtorch_cpu.so()(64bit), libtorch_cuda.so()(64bit), libtorch_python.so()(64bit)
 DEBUG:girolle.girolle:Detected CUDA library: libcudart.so.12()(64bit) (version: 12)
 INFO:auditwheel.wheeltools:Previous filename tags: manylinux1_x86_64
-INFO:auditwheel.wheeltools:New filename tags: fc39_x86_64-cu12
+INFO:auditwheel.wheeltools:New filename tags: fc39-x86_64-cu12
 INFO:auditwheel.wheeltools:Previous WHEEL info tags: cp312-cp312-linux_x86_64
-INFO:auditwheel.wheeltools:New WHEEL info tags: cp312-cp312-fc39_x86_64-cu12
+INFO:auditwheel.wheeltools:New WHEEL info tags: cp312-cp312-fc39-x86_64-cu12
 
-torch-2.3.0-cp312-cp312-fc39_x86_64-cu12.whl
+torch-2.3.0-cp312-cp312-fc39-x86_64-cu12.whl
 ```
 
 ```shell
-$ unzip torch-2.3.0-cp312-cp312-fc39_x86_64-cu12.whl torch-2.3.0.dist-info/rpm-requires.txt
-Archive:  torch-2.3.0-cp312-cp312-fc39_x86_64-cu12.whl
+$ unzip torch-2.3.0-cp312-cp312-fc39-x86_64-cu12.whl torch-2.3.0.dist-info/rpm-requires.txt
+Archive:  torch-2.3.0-cp312-cp312-fc39-x86_64-cu12.whl
   inflating: torch-2.3.0.dist-info/rpm-requires.txt
 
 $ cat torch-2.3.0.dist-info/rpm-requires.txt
