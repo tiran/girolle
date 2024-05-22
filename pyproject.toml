@@ -1,0 +1,68 @@
+# SPDX-License-Identifier: Apache-2.0
+
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "girolle"
+authors = [
+    { name="Christian Heimes", email="cheimes@redhat.com" },
+]
+description = "Turn cheese wheels into tasty Fedora wheels"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+dynamic = ["version"]
+dependencies = [
+    "auditwheel",
+    "packaging",
+]
+
+[project.scripts]
+girolle = "girolle.girolle:main"
+
+[project.urls]
+# homepage = ""
+source = "https://github.com/tiran/girolle"
+issues = "https://github.com/tiran/girolle/issues"
+
+[tool.setuptools_scm]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Fixers will be enabled gradually.
+select = [
+    "B",  # flake8-bugbear
+    "E",  # pycodestyle
+    "F",  # Pyflakes
+    "Q",  # flake8-quotes
+    "I",  # isort
+    "UP",  # pyupgrade
+    "SIM",  # flake8-simplify
+    "TID",  # flake8-tidy-imports
+]
+ignore = [
+    # some embedded strings are longer than 88 characters
+    "E501",  # line too long
+    "TID252",  # Prefer absolute imports over relative imports from parent modules
+]
